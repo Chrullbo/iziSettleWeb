@@ -102,3 +102,38 @@ body > div {
 .app-store-link:hover {
   transform: translateY(-2px);
 }
+
+/* Responsive gallery: horizontal scroll on small screens, three-up on desktop */
+.gallery {
+  display: flex;
+  gap: 1rem;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  height: 60vw; /* mobile-friendly gallery height */
+  max-height: 320px;
+}
+.gallery img {
+  flex: 0 0 80%;
+  max-width: 80%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 700px) {
+  .gallery {
+    overflow-x: visible;
+    justify-content: center;
+    height: auto;
+  }
+  .gallery img {
+    flex: 1 1 0;
+    width: calc(33.333% - 0.66rem);
+    max-width: 320px;
+    height: auto;
+  }
+}

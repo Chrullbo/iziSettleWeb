@@ -65,22 +65,28 @@ body > div {
   height: 100vh;
 }
 
-.badge-row { margin: 0.75rem 0; }
+.badge-row {
+  margin: 0.75rem 0;
+}
 
 .iphone-badge {
   display: inline-block;
-  background: linear-gradient(135deg,#ff6b6b,#ff8e53);
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
   color: white;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   font-weight: 700;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.06) inset;
-  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   letter-spacing: 0.02em;
   text-transform: none;
 }
 
-.iphone-badge[role="status"] { outline: none; }
+.iphone-badge[role="status"] {
+  outline: none;
+}
 
 .app-store-link {
   display: inline-block;
@@ -93,4 +99,6 @@ body > div {
   font-weight: 600;
 }
 
-.app-store-link:hover { transform: translateY(-2px); }
+.app-store-link:hover {
+  transform: translateY(-2px);
+}

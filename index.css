@@ -1,6 +1,62 @@
-body {
-  background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+
+:root {
+  --base-font:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--base-font);
+  color: rgb(115, 20, 240);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 2rem;
+  background: #000;
+}
+
+/* Paragraphs */
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  color: #fff;
+}
+ul,
+li {
+  color: #fff;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--base-font);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 body > div {
   display: flex;
   flex-direction: column;
@@ -8,7 +64,33 @@ body > div {
   justify-content: center;
   height: 100vh;
 }
-h1,
-p {
-  color: rgb(115, 20, 240);
+
+.badge-row { margin: 0.75rem 0; }
+
+.iphone-badge {
+  display: inline-block;
+  background: linear-gradient(135deg,#ff6b6b,#ff8e53);
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.06) inset;
+  border: 1px solid rgba(255,255,255,0.08);
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
+
+.iphone-badge[role="status"] { outline: none; }
+
+.app-store-link {
+  display: inline-block;
+  margin: 0.6rem 0;
+  padding: 0.45rem 0.9rem;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-store-link:hover { transform: translateY(-2px); }

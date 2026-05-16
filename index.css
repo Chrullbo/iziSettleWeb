@@ -30,7 +30,8 @@ p {
   color: #fff;
 }
 ul,
-li {
+li,
+a {
   color: #fff;
 }
 
@@ -51,13 +52,8 @@ h1 {
   font-size: 2rem;
 }
 
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-body > div {
+/* Homepage container only: use full-viewport centering for the landing page */
+body > .home {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,15 +105,19 @@ body > div {
   gap: 1rem;
   margin: 0.75rem 0;
   overflow-x: auto;
+  overflow-y: hidden; /* prevent vertical scrolling inside gallery */
   -webkit-overflow-scrolling: touch;
   padding-bottom: 0.5rem;
+  align-items: center; /* vertically center images within the gallery */
   height: 60vw; /* mobile-friendly gallery height */
   max-height: 320px;
 }
 .gallery img {
+  display: block;
   flex: 0 0 80%;
   max-width: 80%;
   height: 100%;
+  min-height: 0;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
@@ -135,5 +135,28 @@ body > div {
     width: calc(33.333% - 0.66rem);
     max-width: 320px;
     height: auto;
+  }
+}
+
+/* Prevent vertical scroll on small screens by reducing paddings and element sizes */
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+  body > .home {
+    height: calc(100vh - 2rem);
+  }
+  .logo-img {
+    width: 140px;
+    height: auto;
+    max-height: 18vh;
+  }
+  .gallery {
+    height: 42vw;
+    max-height: 260px;
+  }
+  /* ensure images still fill the gallery height */
+  .gallery img {
+    height: 100%;
   }
 }

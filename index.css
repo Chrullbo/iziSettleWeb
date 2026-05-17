@@ -99,44 +99,7 @@ body > .home {
   transform: translateY(-2px);
 }
 
-/* Responsive gallery: horizontal scroll on small screens, three-up on desktop */
-.gallery {
-  display: flex;
-  gap: 1rem;
-  margin: 0.75rem 0;
-  overflow-x: auto;
-  overflow-y: hidden; /* prevent vertical scrolling inside gallery */
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.5rem;
-  align-items: center; /* vertically center images within the gallery */
-  height: 60vw; /* mobile-friendly gallery height */
-  max-height: 320px;
-}
-.gallery img {
-  display: block;
-  flex: 0 0 80%;
-  max-width: 80%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  border: 2px solid rgba(255, 255, 255, 0.06);
-}
-
-@media (min-width: 700px) {
-  .gallery {
-    overflow-x: visible;
-    justify-content: center;
-    height: auto;
-  }
-  .gallery img {
-    flex: 1 1 0;
-    width: calc(33.333% - 0.66rem);
-    max-width: 320px;
-    height: auto;
-  }
-}
+/* gallery removed — images handled elsewhere or omitted */
 
 /* Prevent vertical scroll on small screens by reducing paddings and element sizes */
 @media (max-width: 700px) {
@@ -159,4 +122,92 @@ body > .home {
   .gallery img {
     height: 100%;
   }
+}
+
+/* FAQ styles */
+.faq {
+  width: 100%;
+  max-width: 720px;
+  margin: 1.25rem auto 0 auto;
+  text-align: left;
+  color: #fff;
+}
+.faq h2 {
+  margin: 0 0 0.5rem 0;
+}
+.faq details {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  padding: 0.6rem 0.75rem;
+}
+.faq summary {
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.faq summary::marker {
+  content: none;
+}
+.faq details[open] {
+  background: rgba(255, 255, 255, 0.06);
+}
+.faq p {
+  margin: 0.5rem 0 0 0;
+}
+
+/* Contact form styles */
+.contact {
+  width: 100%;
+  max-width: 720px;
+  margin: 1rem auto 2rem auto;
+  text-align: left;
+  color: #fff;
+}
+.contact h2 {
+  margin: 0 0 0.5rem 0;
+}
+.contact-note {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  margin: 0 0 0.6rem 0;
+  font-style: italic;
+}
+.contact form {
+  display: grid;
+  gap: 0.6rem;
+}
+.contact label {
+  display: block;
+  font-size: 0.95rem;
+}
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  box-sizing: border-box;
+}
+.contact button[type="submit"] {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  background: linear-gradient(135deg, #37d67a, #1db954);
+  color: #042;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.contact button[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+.contact #cf-status {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
 }

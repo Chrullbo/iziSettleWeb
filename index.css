@@ -4,11 +4,21 @@
   --base-font:
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
     Arial, sans-serif;
+  --page-max-width: 960px;
+  --page-gutter: clamp(1rem, 2vw, 2rem);
+  --surface: #000;
+  --surface-elevated: rgb(115, 20, 240);
+  --border-soft: rgba(255, 255, 255, 0.14);
+  --border-faint: rgba(255, 255, 255, 0.08);
 }
 
 html,
 body {
   height: 100%;
+}
+
+html {
+  color-scheme: dark;
 }
 
 body {
@@ -17,8 +27,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  padding: 2rem;
-  background: #000;
+  padding: 0;
+  background: var(--surface);
 }
 
 /* Paragraphs */
@@ -57,8 +67,12 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: flex-start;
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  width: min(100%, var(--page-max-width));
+  margin: 0 auto;
+  padding: var(--page-gutter);
+  box-sizing: border-box;
 }
 
 faq-comp,
@@ -71,19 +85,18 @@ logo-comp {
 }
 
 .language-prompt {
-  width: min(100%, 720px);
-  margin: 0 auto;
-  padding: 1rem 1.1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(
-    135deg,
-    rgba(18, 18, 26, 0.96),
-    rgba(35, 24, 60, 0.94)
-  );
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: 1rem var(--page-gutter);
+  border-radius: 0;
+  border-block: 1px solid var(--border-soft);
+  border-inline: 0;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   color: #fff;
   display: flex;
   gap: 1rem;
@@ -93,6 +106,8 @@ logo-comp {
 
 .language-prompt__content {
   flex: 1;
+  text-align: left;
+  min-width: 0;
 }
 
 .language-prompt__eyebrow {
@@ -110,6 +125,7 @@ logo-comp {
   font-size: 1rem;
   line-height: 1.4;
   color: #fff;
+  text-align: left;
 }
 
 .language-prompt__text {
@@ -122,6 +138,7 @@ logo-comp {
   gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+  flex: 0 0 auto;
 }
 
 .language-prompt__button,
@@ -152,23 +169,24 @@ logo-comp {
 }
 
 .language-prompt__button {
-  background: rgba(255, 255, 255, 0.08);
   color: #fff;
 }
 
 .language-prompt__link {
-  background: linear-gradient(135deg, #37d67a, #1db954);
-  color: #042;
+  background: var(--surface-elevated);
+  color: #fff;
 }
 
 @media (max-width: 640px) {
   .language-prompt {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
+    margin-inline: calc(50% - 50vw);
   }
 
   .language-prompt__actions {
-    justify-content: stretch;
+    justify-content: space-between;
   }
 
   .language-prompt__button,

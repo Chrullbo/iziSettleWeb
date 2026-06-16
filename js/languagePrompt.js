@@ -58,18 +58,15 @@ function getBrowserLocale() {
 function getPathByLocale(locale) {
   const pathname = window.location.pathname;
 
-  if (pathname.endsWith("/se/index.html") || pathname.endsWith("/index.html")) {
+  if (pathname.endsWith("/se") || pathname.endsWith("/")) {
     return locale === "sv"
-      ? pathname.replace(/\/index\.html$/i, "/se/index.html")
-      : pathname.replace(/\/se\/index\.html$/i, "/index.html");
+      ? pathname.replace(/\/$/i, "/se/")
+      : pathname.replace(/\/se\/$/i, "/");
   }
 
-  if (
-    pathname.endsWith("/se/privacy/index.html") ||
-    pathname.endsWith("/privacy.html")
-  ) {
+  if (pathname.endsWith("/se/privacy/") || pathname.endsWith("/privacy.html")) {
     return locale === "sv"
-      ? pathname.replace(/\/privacy\.html$/i, "/se/privacy/index.html")
+      ? pathname.replace(/\/privacy\.html$/i, "/se/privacy/")
       : pathname.replace(/\/se\/privacy\/index\.html$/i, "/privacy.html");
   }
 

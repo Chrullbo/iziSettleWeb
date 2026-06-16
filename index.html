@@ -1,163 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IziSettle -- Settle your expenses with ease --</title>
     <link rel="icon" href="images/iziSettleIOSIcon 1.png" type="image/png" />
     <link rel="stylesheet" href="index.css" />
+    <script type="module" src="js/form.js"></script>
+    <script type="module" src="js/faq.js"></script>
+    <script type="module" src="js/logo.js"></script>
+    <script type="module" src="js/appStoreLink.js"></script>
+    <script type="module" src="js/imageGallery.js"></script>
+    <script type="module" src="js/languagePrompt.js"></script>
   </head>
   <body>
-    <div class="home">
-      <h1>IziSettle</h1>
-
-      <p>-- Settle your expenses with ease --</p>
-      <img
-        class="logo-img"
-        src="images/iziSettleIOSIcon 1.png"
-        alt="IziSettle Logo"
-        width="200"
-        height="200"
-      />
-
-      <div class="badge-row">
-        <span class="iphone-badge" role="status">Only available on iPhone</span>
-      </div>
-
-      <a
-        class="app-store-link"
-        href="https://apps.apple.com/us/app/izisettle/id6758045318"
-      >
-        <img
-          src="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
-          alt="Download on the App Store"
-          width="200"
-          height="60"
-        />
-      </a>
-
-      <!-- FAQ: collapsible details/summary elements; user can fill content -->
-      <section class="faq" aria-label="Frequently Asked Questions">
-        <h2>FAQ</h2>
-        <details>
-          <summary>How do I get started?</summary>
-          <p>
-            Download the app from the App Store and create a profile to get
-            started. Create a settlement and add expenses then invite your
-            friends, through iMessage or Airdrop, to join the settlement.
-          </p>
-        </details>
-        <details>
-          <summary>Does the app use iCloud?</summary>
-          <p>
-            Yes, the app uses iCloud to synchronize your data across your Apple
-            devices.
-          </p>
-        </details>
-        <details>
-          <summary>Can I share with Android users?</summary>
-          <p>
-            No, the app is currently only available for iPhone and does not
-            support sharing with Android users.
-          </p>
-        </details>
-        <details>
-          <summary>Is my data private?</summary>
-          <p>
-            Yes, your data is private and secure. We do not share your personal
-            information with any third parties.
-          </p>
-        </details>
-        <details>
-          <summary>How do I delete my account?</summary>
-          <p>
-            Delete your account by going to the app settings and selecting
-            "Delete Account." Please note that this action is irreversible and
-            will permanently delete all your iCloud data associated with the
-            app.
-          </p>
-        </details>
-      </section>
-      <!-- Contact form: question field only (we use mailto to open user's mail client). -->
-      <section class="contact" aria-label="Contact form">
-        <h2>Ask a question</h2>
-        <p class="contact-note">
-          When you send, your email client will open and your question will be
-          sent using your email account.
-          <br />Response time is typically 3 business days or less.
-        </p>
-        <form id="contactForm">
-          <label>
-            Question
-            <textarea
-              name="question"
-              id="cf-question"
-              rows="4"
-              required
-            ></textarea>
-          </label>
-          <!-- Honeypot (hidden) to reduce spam -->
-          <label style="display: none">
-            Leave this field empty
-            <input type="text" name="hp" id="cf-hp" />
-          </label>
-          <button type="submit" id="cf-submit">Send</button>
-          <p id="cf-status" aria-live="polite"></p>
-        </form>
-      </section>
+    <main>
+      <logo-comp></logo-comp>
+      <app-store-link language="en"></app-store-link>
+      <app-gallery language="en"></app-gallery>
+      <faq-comp language="en"></faq-comp>
+      <contact-form language="en"></contact-form>
       <a href="privacy.html"> Privacy Policy </a>
-    </div>
-
-    <script>
-      (function () {
-        // Always open the visitor's email client. No server-side submission.
-        const form = document.getElementById("contactForm");
-        const status = document.getElementById("cf-status");
-        const submitBtn = document.getElementById("cf-submit");
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          status.textContent = "";
-
-          // Honeypot check
-          if (document.getElementById("cf-hp").value) {
-            status.textContent = "Spam detected.";
-            return;
-          }
-
-          // Ensure required fields are valid
-          if (!form.reportValidity()) {
-            status.textContent = "Please fill the question field.";
-            return;
-          }
-
-          const question = document.getElementById("cf-question").value.trim();
-
-          // Build mailto: URL and open the user's email client. This does NOT send anything from the server.
-          const subject = encodeURIComponent("IziSettle question");
-          const body = encodeURIComponent(
-            "Question:\n" +
-              question +
-              "\n\nSent from user device via mail client.",
-          );
-          const mailto =
-            "mailto:support@izisettle.se?subject=" + subject + "&body=" + body;
-
-          submitBtn.disabled = true;
-          submitBtn.textContent = "Opening mail client…";
-
-          // Open mail client
-          window.location.href = mailto;
-          status.textContent = "Opening mail client…";
-          form.reset();
-
-          // restore button state after a short delay
-          setTimeout(function () {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Send";
-          }, 800);
-        });
-      })();
-    </script>
+    </main>
   </body>
 </html>

@@ -53,15 +53,139 @@ h1 {
 }
 
 /* Homepage container only: use full-viewport centering for the landing page */
-body > .home {
+body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
-.badge-row {
-  margin: 0.75rem 0;
+faq-comp,
+contact-form,
+app-store-link,
+logo-comp {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.language-prompt {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(18, 18, 26, 0.96),
+    rgba(35, 24, 60, 0.94)
+  );
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.language-prompt__content {
+  flex: 1;
+}
+
+.language-prompt__eyebrow {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.language-prompt__title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.language-prompt__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.language-prompt__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.language-prompt__button,
+.language-prompt__link {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease,
+    background 160ms ease;
+}
+
+.language-prompt__button:hover,
+.language-prompt__link:hover {
+  transform: translateY(-1px);
+}
+
+.language-prompt__button:focus,
+.language-prompt__link:focus {
+  outline: 2px solid rgb(115, 20, 240);
+  outline-offset: 2px;
+}
+
+.language-prompt__button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.language-prompt__link {
+  background: linear-gradient(135deg, #37d67a, #1db954);
+  color: #042;
+}
+
+@media (max-width: 640px) {
+  .language-prompt {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .language-prompt__actions {
+    justify-content: stretch;
+  }
+
+  .language-prompt__button,
+  .language-prompt__link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Shared section styles */
+.faq,
+.contact {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+  color: #fff;
 }
 
 .iphone-badge {
@@ -76,16 +200,10 @@ body > .home {
     0 1px 0 rgba(255, 255, 255, 0.06) inset;
   border: 1px solid rgba(255, 255, 255, 0.08);
   letter-spacing: 0.02em;
-  text-transform: none;
-}
-
-.iphone-badge[role="status"] {
-  outline: none;
 }
 
 .app-store-link {
   display: inline-block;
-  margin: 0.6rem 0;
   padding: 0.45rem 0.9rem;
   background: #111;
   color: #fff;
@@ -98,42 +216,12 @@ body > .home {
   transform: translateY(-2px);
 }
 
-/* gallery removed — images handled elsewhere or omitted */
-
-/* Prevent vertical scroll on small screens by reducing paddings and element sizes */
-@media (max-width: 700px) {
-  body {
-    padding: 1rem;
-  }
-  body > .home {
-    height: calc(100vh - 2rem);
-  }
-  .logo-img {
-    width: 140px;
-    height: auto;
-    max-height: 18vh;
-  }
-  .gallery {
-    height: 42vw;
-    max-height: 260px;
-  }
-  /* ensure images still fill the gallery height */
-  .gallery img {
-    height: 100%;
-  }
+.app-store-link:focus {
+  outline: 2px solid rgb(115, 20, 240);
+  outline-offset: 2px;
 }
 
 /* FAQ styles */
-.faq {
-  width: 100%;
-  max-width: 720px;
-  margin: 1.25rem auto 0 auto;
-  text-align: left;
-  color: #fff;
-}
-.faq h2 {
-  margin: 0 0 0.5rem 0;
-}
 .faq details {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -141,49 +229,52 @@ body > .home {
   margin: 0.5rem 0;
   padding: 0.6rem 0.75rem;
 }
+
 .faq summary {
   font-weight: 700;
   cursor: pointer;
   list-style: none;
 }
+
+.faq summary:focus {
+  outline: 2px solid rgb(115, 20, 240);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .faq summary::marker {
   content: none;
 }
+
 .faq details[open] {
   background: rgba(255, 255, 255, 0.06);
 }
+
 .faq p {
   margin: 0.5rem 0 0 0;
 }
 
 /* Contact form styles */
-.contact {
-  width: 100%;
-  max-width: 720px;
-  margin: 1rem auto 2rem auto;
-  text-align: left;
-  color: #fff;
-}
-.contact h2 {
-  margin: 0 0 0.5rem 0;
-}
-.contact-note {
-  color: #dcdcdc;
-  font-size: 0.95rem;
-  margin: 0 0 0.6rem 0;
-  font-style: italic;
-}
 .contact form {
   display: grid;
   gap: 0.6rem;
 }
+
 .contact label {
   display: block;
   font-size: 0.95rem;
 }
-.contact input[type="text"],
-.contact input[type="email"],
-.contact textarea {
+
+.contact-note {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  margin: 0;
+  font-style: italic;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
   width: 100%;
   padding: 0.5rem;
   border-radius: 8px;
@@ -192,8 +283,16 @@ body > .home {
   color: #fff;
   box-sizing: border-box;
 }
-.contact button[type="submit"] {
-  display: inline-block;
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: 2px solid rgb(115, 20, 240);
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+button[type="submit"] {
   padding: 0.55rem 0.9rem;
   background: linear-gradient(135deg, #37d67a, #1db954);
   color: #042;
@@ -202,11 +301,18 @@ body > .home {
   font-weight: 700;
   cursor: pointer;
 }
-.contact button[disabled] {
+
+button[type="submit"]:focus {
+  outline: 2px solid rgb(115, 20, 240);
+  outline-offset: 2px;
+}
+
+button[disabled] {
   opacity: 0.7;
   cursor: default;
 }
+
 .contact #cf-status {
-  margin: 0.5rem 0 0 0;
+  margin: 0;
   font-size: 0.95rem;
 }

@@ -4,22 +4,11 @@ const translations = {
   sv: "se",
   en: "en",
   de: "de",
-} as const;
+};
 
-type Locale = keyof typeof translations;
+const DEFAULT_LOCALE = "en";
 
-const DEFAULT_LOCALE: Locale = "en";
-
-const LANGUAGE_LABELS: Record<
-  Locale,
-  {
-    eyebrow: string;
-    title: string;
-    text: string;
-    primary: string;
-    secondary: string;
-  }
-> = {
+const LANGUAGE_LABELS = {
   en: {
     eyebrow: "Language",
     title: "Switch to English?",
@@ -43,23 +32,23 @@ const LANGUAGE_LABELS: Record<
   },
 };
 
-const SUPPORTED_LOCALES = Object.keys(translations) as Locale[];
+const SUPPORTED_LOCALES = Object.keys(translations);
 
-function isLocale(value: string): value is Locale {
-  return SUPPORTED_LOCALES.includes(value as Locale);
+function isLocale(value) {
+  return SUPPORTED_LOCALES.includes(value);
 }
 
-function getCurrentLocale(): Locale {
+function getCurrentLocale() {
   const pathname = window.location.pathname.toLowerCase();
 
   const locale = SUPPORTED_LOCALES.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
-  return locale ?? DEFAULT_LOCALE;
+  return locale || DEFAULT_LOCALE;
 }
 
-function getBrowserLocale(): Locale | null {
+function getBrowserLocale() {
   const languages = [...(navigator.languages || []), navigator.language]
     .filter(Boolean)
     .map((language) => language.toLowerCase());
@@ -69,14 +58,13 @@ function getBrowserLocale(): Locale | null {
       .map((language) =>
         SUPPORTED_LOCALES.find((locale) => language.startsWith(locale)),
       )
-      .find(Boolean) ?? null
+      .find(Boolean) || null
   );
 }
 
-function getPathByLocale(locale: Locale): string {
+function getPathByLocale(locale) {
   const pathname = window.location.pathname;
 
-  // ta bort befintligt språkprefix först
   const pathWithoutLocale = pathname.replace(
     new RegExp(`^/(${SUPPORTED_LOCALES.join("|")})(?=/|$)`, "i"),
     "",
@@ -84,28 +72,26 @@ function getPathByLocale(locale: Locale): string {
 
   const normalizedPath = pathWithoutLocale || "/";
 
-  // default-språket har inget prefix
   if (locale === DEFAULT_LOCALE) {
     return normalizedPath;
   }
 
-  // övriga språk får prefix
   return `/${locale}${normalizedPath}`;
 }
 
-function buildTargetUrl(locale: Locale): string {
+function buildTargetUrl(locale) {
   return new URL(getPathByLocale(locale), window.location.href).href;
 }
 
-function storePreference(locale: Locale): void {
+function storePreference(locale) {
   try {
     localStorage.setItem(STORAGE_KEY, locale);
   } catch {
-    // Ignore storage failures.
+    // Ignore storage failures
   }
 }
 
-function getStoredPreference(): Locale | null {
+function getStoredPreference() {
   try {
     const value = localStorage.getItem(STORAGE_KEY);
 
@@ -115,13 +101,11 @@ function getStoredPreference(): Locale | null {
   }
 }
 
-function createPrompt(
-  currentLocale: Locale,
-  targetLocale: Locale,
-): HTMLElement {
+function createPrompt(currentLocale, targetLocale) {
   const copy = LANGUAGE_LABELS[targetLocale];
 
   const banner = document.createElement("section");
+
   banner.className = "language-prompt";
   banner.setAttribute("role", "region");
   banner.setAttribute("aria-label", `${copy.eyebrow} suggestion`);
@@ -130,23 +114,33 @@ function createPrompt(
 
   banner.innerHTML = `
     <div class="language-prompt__content">
-      <span class="language-prompt__eyebrow">${copy.eyebrow}</span>
-      <h2 class="language-prompt__title">${copy.title}</h2>
-      <p class="language-prompt__text">${copy.text}</p>
+      <span class="language-prompt__eyebrow">
+        ${copy.eyebrow}
+      </span>
+
+      <h2 class="language-prompt__title">
+        ${copy.title}
+      </h2>
+
+      <p class="language-prompt__text">
+        ${copy.text}
+      </p>
     </div>
+
     <div class="language-prompt__actions">
       <a class="language-prompt__link" href="${primaryUrl}">
         ${copy.primary}
       </a>
-      <button class="language-prompt__button" type="button">
+
+      <button 
+        class="language-prompt__button" 
+        type="button">
         ${copy.secondary}
       </button>
     </div>
   `;
 
-  const dismissButton = banner.querySelector<HTMLButtonElement>(
-    ".language-prompt__button",
-  );
+  const dismissButton = banner.querySelector(".language-prompt__button");
 
   dismissButton?.addEventListener("click", () => {
     storePreference(currentLocale);
@@ -156,7 +150,7 @@ function createPrompt(
   return banner;
 }
 
-function initLanguagePrompt(): void {
+function initLanguagePrompt() {
   const currentLocale = getCurrentLocale();
   const browserLocale = getBrowserLocale();
   const storedPreference = getStoredPreference();
@@ -172,6 +166,7 @@ function initLanguagePrompt(): void {
     if (storedPreference !== currentLocale) {
       window.location.href = buildTargetUrl(storedPreference);
     }
+
     return;
   }
 

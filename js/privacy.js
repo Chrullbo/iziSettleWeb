@@ -167,7 +167,7 @@ class PrivacyPolicy extends HTMLElement {
     this.innerHTML = `
       <article class="privacy-policy" lang="${language}" aria-labelledby="privacy-heading">
         <header>
-          <h1 id="privacy-heading">${t.heading}</h1>
+          <h1 id="privacy-heading izi-gradient">${t.heading}</h1>
           <p class="effective-date">${t.effectiveDate}</p>
         </header>
         

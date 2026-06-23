@@ -66,17 +66,19 @@ function getPathByLocale(locale) {
   const pathname = window.location.pathname;
 
   const pathWithoutLocale = pathname.replace(
-    new RegExp(`^/(${SUPPORTED_LOCALES.join("|")})(?=/|$)`, "i"),
+    new RegExp(`^/(${Object.values(translations).join("|")})(?=/|$)`, "i"),
     "",
   );
 
   const normalizedPath = pathWithoutLocale || "/";
 
+  const urlLocale = translations[locale];
+
   if (locale === DEFAULT_LOCALE) {
     return normalizedPath;
   }
 
-  return `/${locale}${normalizedPath}`;
+  return `/${urlLocale}${normalizedPath}`;
 }
 
 function buildTargetUrl(locale) {

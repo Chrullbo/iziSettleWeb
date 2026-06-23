@@ -87,23 +87,19 @@ function getBrowserLocale(): Locale | null {
 function getPathByLocale(locale: Locale): string {
   const pathname = window.location.pathname;
 
-  let normalizedPath = pathname;
+  // Ta bort ev. befintligt språkprefix
+  const pathWithoutLocale = pathname.replace(
+    new RegExp(`^/(${SUPPORTED_LOCALES.join("|")})(?=/|$)`, "i"),
+    "",
+  );
 
-  for (const supportedLocale of SUPPORTED_LOCALES) {
-    normalizedPath = normalizedPath.replace(
-      new RegExp(`/${supportedLocale}/`, "i"),
-      "/",
-    );
+  const normalizedPath = pathWithoutLocale || "/";
 
-    normalizedPath = normalizedPath.replace(
-      new RegExp(`/${supportedLocale}$`, "i"),
-      "",
-    );
+  if (locale === DEFAULT_LOCALE) {
+    return normalizedPath;
   }
 
-  const localePrefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
-
-  return `${localePrefix}${normalizedPath}`.replace(/\/+/g, "/");
+  return `/${locale}${normalizedPath}`;
 }
 
 function buildTargetUrl(locale: Locale): string {

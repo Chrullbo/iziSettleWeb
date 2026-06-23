@@ -41,11 +41,11 @@ function isLocale(value) {
 function getCurrentLocale() {
   const pathname = window.location.pathname.toLowerCase();
 
-  const locale = SUPPORTED_LOCALES.find(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+  const urlLocale = Object.entries(translations).find(
+    ([, path]) => pathname === `/${path}` || pathname.startsWith(`/${path}/`),
   );
 
-  return locale || DEFAULT_LOCALE;
+  return urlLocale ? urlLocale[0] : DEFAULT_LOCALE;
 }
 
 function getBrowserLocale() {

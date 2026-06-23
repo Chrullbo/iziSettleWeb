@@ -87,7 +87,7 @@ function getBrowserLocale(): Locale | null {
 function getPathByLocale(locale: Locale): string {
   const pathname = window.location.pathname;
 
-  // Ta bort ev. befintligt språkprefix
+  // ta bort befintligt språkprefix först
   const pathWithoutLocale = pathname.replace(
     new RegExp(`^/(${SUPPORTED_LOCALES.join("|")})(?=/|$)`, "i"),
     "",
@@ -95,10 +95,12 @@ function getPathByLocale(locale: Locale): string {
 
   const normalizedPath = pathWithoutLocale || "/";
 
+  // default-språket har inget prefix
   if (locale === DEFAULT_LOCALE) {
     return normalizedPath;
   }
 
+  // övriga språk får prefix
   return `/${locale}${normalizedPath}`;
 }
 

@@ -50,24 +50,13 @@ function isLocale(value: string): value is Locale {
 }
 
 function getCurrentLocale(): Locale {
-  const htmlLang = document.documentElement.lang.toLowerCase();
-
-  const htmlMatch = SUPPORTED_LOCALES.find((locale) =>
-    htmlLang.startsWith(locale),
-  );
-
-  if (htmlMatch) {
-    return htmlMatch;
-  }
-
   const pathname = window.location.pathname.toLowerCase();
 
-  const pathMatch = SUPPORTED_LOCALES.find(
-    (locale) =>
-      pathname.includes(`/${locale}/`) || pathname.endsWith(`/${locale}`),
+  const locale = SUPPORTED_LOCALES.find(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
-  return pathMatch ?? DEFAULT_LOCALE;
+  return locale ?? DEFAULT_LOCALE;
 }
 
 function getBrowserLocale(): Locale | null {
@@ -172,11 +161,17 @@ function initLanguagePrompt(): void {
   const browserLocale = getBrowserLocale();
   const storedPreference = getStoredPreference();
 
+  console.log({
+    currentLocale,
+    browserLocale,
+    storedPreference,
+    path: window.location.pathname,
+  });
+
   if (storedPreference) {
     if (storedPreference !== currentLocale) {
       window.location.href = buildTargetUrl(storedPreference);
     }
-
     return;
   }
 

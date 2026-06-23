@@ -158,7 +158,7 @@ class PrivacyPolicy extends HTMLElement {
       .map(
         ({ title, content }) => `
         <section class="policy-item">
-          <h2>${title}</h2>
+          <h2 class="izi-gradient">${title}</h2>
           <p>${content}</p>
         </section>`,
       )

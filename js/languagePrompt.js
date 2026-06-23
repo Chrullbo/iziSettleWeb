@@ -64,17 +64,35 @@ function getBrowserLocale() {
 
 function getPathByLocale(locale) {
   const pathname = window.location.pathname;
+  const localeSuffixes = ["/se", "/en", "/de", "/se/", "/en/", "/de/"];
+  const hasLocaleSuffix = localeSuffixes.some((suffix) =>
+    pathname.endsWith(suffix),
+  );
 
-  if (pathname.endsWith("/se") || pathname.endsWith("/")) {
-    return locale === "sv"
-      ? pathname.replace(/\/$/i, "/se/")
-      : pathname.replace(/\/se\/$/i, "/");
+  if (hasLocaleSuffix || pathname.endsWith("/")) {
+    switch (locale) {
+      case "sv":
+        return pathname.replace(/\/$/i, "/se/");
+      case "en":
+        return pathname.replace(/\/se\/$/i, "/").replace(/\/de\/$/i, "/");
+      case "de":
+        return pathname.replace(/\/se\/$/i, "/de/").replace(/\/$/i, "/de/");
+      default:
+        return pathname.replace(/\/se\/$/i, "/").replace(/\/de\/$/i, "/");
+    }
   }
 
-  if (pathname.endsWith("/se/privacy/") || pathname.endsWith("/privacy/")) {
-    return locale === "sv"
-      ? pathname.replace(/\/privacy\/$/i, "/se/privacy/")
-      : pathname.replace(/\/se\/privacy\/$/i, "/privacy/");
+  if (pathname.endsWith("/privacy/")) {
+    switch (locale) {
+      case "sv":
+        return pathname.replace(/\/privacy\/$/i, "/se/privacy/");
+      case "en":
+        return pathname.replace(/\/se\/privacy\/$/i, "/privacy/");
+      case "de":
+        return pathname.replace(/\/privacy\/$/i, "/de/privacy/");
+      default:
+        return pathname.replace(/\/se\/privacy\/$/i, "/privacy/");
+    }
   }
 
   return pathname;

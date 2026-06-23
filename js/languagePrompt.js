@@ -71,10 +71,10 @@ function getPathByLocale(locale) {
       : pathname.replace(/\/se\/$/i, "/");
   }
 
-  if (pathname.endsWith("/se/privacy/") || pathname.endsWith("/privacy.html")) {
+  if (pathname.endsWith("/se/privacy/") || pathname.endsWith("/privacy/")) {
     return locale === "sv"
-      ? pathname.replace(/\/privacy\.html$/i, "/se/privacy/")
-      : pathname.replace(/\/se\/privacy\/index\.html$/i, "/privacy.html");
+      ? pathname.replace(/\/privacy\/$/i, "/se/privacy/")
+      : pathname.replace(/\/se\/privacy\/$/i, "/privacy/");
   }
 
   return pathname;

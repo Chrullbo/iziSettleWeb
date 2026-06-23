@@ -75,6 +75,36 @@ class Faq extends HTMLElement {
           },
         ],
       },
+      de: {
+        heading: "Häufig gestellte Fragen",
+        items: [
+          {
+            question: "Wie fange ich an?",
+            answer:
+              "Laden Sie die App aus dem App Store herunter und erstellen Sie ein Profil, um loszulegen. Erstellen Sie eine Abrechnung und fügen Sie Ausgaben hinzu, dann laden Sie Ihre Freunde über iMessage oder Airdrop ein, um der Abrechnung beizutreten.",
+          },
+          {
+            question: "Verwendet die App iCloud?",
+            answer:
+              "Ja, die App verwendet iCloud, um Ihre Daten auf Ihren Apple-Geräten zu synchronisieren.",
+          },
+          {
+            question: "Kann ich mit Android-Nutzern teilen?",
+            answer:
+              "Nein, die App ist derzeit nur für das iPhone verfügbar und unterstützt keine Freigabe mit Android-Nutzern.",
+          },
+          {
+            question: "Sind meine Daten privat?",
+            answer:
+              "Ja, Ihre Daten sind privat und sicher. Wir geben Ihre persönlichen Informationen nicht an Dritte weiter.",
+          },
+          {
+            question: "Wie lösche ich mein Konto?",
+            answer:
+              'Löschen Sie Ihr Konto, indem Sie zu den App-Einstellungen gehen und "Konto löschen" auswählen. Bitte beachten Sie, dass diese Aktion unwiderruflich ist und alle Ihre iCloud-Daten, die mit der iziSettle-App verknüpft sind, dauerhaft gelöscht werden.',
+          },
+        ],
+      },
     };
 
     const language = this.getAttribute("language") || "en";

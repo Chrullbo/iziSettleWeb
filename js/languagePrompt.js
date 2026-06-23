@@ -15,6 +15,13 @@ const LANGUAGE_LABELS = {
     primary: "Byt till svenska",
     secondary: "Stanna på engelska",
   },
+  de: {
+    eyebrow: "Sprache",
+    title: "Auf Deutsch wechseln?",
+    text: "Wir haben festgestellt, dass dein Browser Deutsch zu bevorzugen scheint.",
+    primary: "Zu Deutsch wechseln",
+    secondary: "Auf Englisch bleiben",
+  },
 };
 
 function getCurrentLocale() {

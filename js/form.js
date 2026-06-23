@@ -30,7 +30,19 @@ class ContactForm extends HTMLElement {
           openingMailClient: "Öppnar e-postklient…",
           honeypotLabel: "Lämna detta fält tomt",
         };
-
+      case "de":
+        return {
+          title: "Stellen Sie eine Frage",
+          subtitle:
+            "Haben Sie eine Frage zu unseren Dienstleistungen? Füllen Sie das untenstehende Formular aus und wir werden uns so schnell wie möglich bei Ihnen melden.",
+          question: "Frage an iziSettle",
+          send: "Senden",
+          formError: "Bitte füllen Sie die Frage aus.",
+          spamDetected: "Spam erkannt.",
+          sentFrom: "Gesendet vom Benutzergerät über den E-Mail-Client.",
+          openingMailClient: "Öffne E-Mail-Client…",
+          honeypotLabel: "Dieses Feld leer lassen",
+        };
       default:
         return {
           title: "Ask a question",

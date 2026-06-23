@@ -22,6 +22,9 @@ class AppStoreLink extends HTMLElement {
       sv: {
         available: "Endast tillgänglig på iPhone",
       },
+      de: {
+        available: "Nur auf dem iPhone verfügbar",
+      },
     };
 
     const language = this.getAttribute("language") || "en";

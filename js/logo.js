@@ -6,7 +6,7 @@ class Logo extends HTMLElement {
   render() {
     this.innerHTML = `
         <header>
-          <h1>IziSettle</h1>
+          <h1 class="izi-gradient">IziSettle</h1>
           <p aria-hidden="true">-- Settle your expenses with ease --</p>
           <img
             class="logo-img"

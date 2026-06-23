@@ -16,6 +16,11 @@ class AppGallery extends HTMLElement {
   translations = {
     sv: {
       title: "Se hur iziSettle fungerar",
+      headlines: [
+        "Dela utgifter på sekunder",
+        "Hushållet på autopilot",
+        "Aldrig mer ojämn skuld",
+      ],
       alt: [
         "Dela kostnader enkelt",
         "Månadsbalans på autopilot",
@@ -25,10 +30,29 @@ class AppGallery extends HTMLElement {
 
     en: {
       title: "See how iziSettle works",
+      headlines: [
+        "Split expenses in seconds",
+        "Your household on autopilot",
+        "Always settled, never awkward",
+      ],
       alt: [
         "Share costs with ease",
         "Monthly balance on autopilot",
         "Always in balance",
+      ],
+    },
+
+    de: {
+      title: "So funktioniert iziSettle",
+      headlines: [
+        "Teile Ausgaben in Sekunden",
+        "Dein Haushalt auf Autopilot",
+        "Immer ausgeglichen, nie unangenehm",
+      ],
+      alt: [
+        "Kosten einfach teilen",
+        "Monatsabrechnung auf Autopilot",
+        "Immer im Gleichgewicht",
       ],
     },
   };

@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "G5ZKJY25GJ.se.christiankihlstrand.izisettle",
+        "components": [
+          {
+            "/": "/s/*",
+            "comment": "Settlement-länkar"
+          }
+        ]
+      }
+    ]
+  }
+}

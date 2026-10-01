@@ -9,6 +9,15 @@
             "comment": "Settlement-länkar"
           }
         ]
+      },
+      {
+        "appID": "G5ZKJY25GJ.com.christiankihlstrand.IziSettle.iziCup",
+        "components": [
+          {
+            "/": "/izicup/*",
+            "comment": "iziCup pool-länkar"
+          }
+        ]
       }
     ]
   }

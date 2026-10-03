@@ -468,3 +468,26 @@ button[disabled] {
 
   position: relative;
 }
+.izi-gradient-pro {
+  display: inline-block;
+
+  /* Pro-gradienten (guld): brons → guld → highlight → guld → brons */
+  background: linear-gradient(
+    135deg,
+    #7a5512 0%,
+    #c9971e 25%,
+    #f4d03f 46%,
+    #fff3b0 55%,
+    #e6b422 68%,
+    #8a6313 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* SwiftUI-shadow */
+  filter: saturate(1.1) drop-shadow(0 1.5px 2px rgba(0, 0, 0, 0.25));
+
+  position: relative;
+}

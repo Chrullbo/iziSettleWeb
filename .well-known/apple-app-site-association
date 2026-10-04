@@ -14,7 +14,11 @@
         "appID": "G5ZKJY25GJ.com.christiankihlstrand.IziSettle.iziCup",
         "components": [
           {
-            "/": "/izicup/*",
+            "/": "/izicup/s",
+            "comment": "iziCup pool-länkar"
+          },
+          {
+            "/": "/izicup/s/*",
             "comment": "iziCup pool-länkar"
           }
         ]

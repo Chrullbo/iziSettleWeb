@@ -7,7 +7,7 @@ class Logo extends HTMLElement {
     this.innerHTML = `
         <header>
           <h1 class="izi-gradient-pro">IziCup</h1>
-          <p aria-hidden="true">-- Handle your tournament bets with ease --</p>
+          <p aria-hidden="true">-- Predict cup matches with ease --</p>
           <img
             class="logo-img"
             src=${this.imagePath}

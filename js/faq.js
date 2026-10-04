@@ -1,6 +1,14 @@
 class Faq extends HTMLElement {
   static get observedAttributes() {
-    return ["language"];
+    return ["language", "izicup"];
+  }
+
+  get iziCup() {
+    return this.hasAttribute("izicup");
+  }
+
+  set iziCup(value) {
+    this.toggleAttribute("izicup", Boolean(value));
   }
 
   connectedCallback() {
@@ -50,8 +58,7 @@ class Faq extends HTMLElement {
         items: [
           {
             question: "Hur kommer jag igång?",
-            answer:
-              "Ladda ner appen från App Store och skapa en profil för att komma igång. Skapa en uppgörelse och lägg till utgifter, och bjud sedan in dina vänner via iMessage eller Airdrop för att gå med i uppgörelsen.",
+            answer: `Ladda ner appen från App Store och skapa en profil för att komma igång. ${this.iziCup ? "Skapa en uppgörelse och lägg till utgifter, och bjud sedan in dina vänner via iMessage eller Airdrop för att gå med i uppgörelsen." : "Välj en turnering och bjud sedan in dina vänner via iMessage eller Airdrop för att kunna delta."}`,
           },
           {
             question: "Använder appen iCloud?",

@@ -62,7 +62,7 @@ class PrivacyPolicy extends HTMLElement {
         heading: "Integritetspolicy",
         effectiveDate: "Giltig från: 22 juni 2026",
         introduction:
-          'IziSettle är engagerat i att skydda din integritet. Denna integritetspolicy förklarar hur användarinformation hanteras i samband med IziSettle ("Appen").',
+          'IziSettle/IziCup är engagerat i att skydda din integritet. Denna integritetspolicy förklarar hur användarinformation hanteras i samband med IziSettle/IziCup ("Appen").',
         items: [
           {
             title: "1. Information vi samlar in",
@@ -97,7 +97,7 @@ class PrivacyPolicy extends HTMLElement {
           {
             title: "7. Kontakta oss",
             content:
-              "Om du har några frågor eller förslag om vår integritetspolicy, vänligen kontakta oss på support@izisettle.se.",
+              "Om du har några frågor eller förslag om vår integritetspolicy, vänligen kontakta oss på support@izisettle.com.",
           },
         ],
       },
@@ -140,7 +140,7 @@ class PrivacyPolicy extends HTMLElement {
           {
             title: "7. Kontaktiere uns",
             content:
-              "Wenn du Fragen oder Vorschläge zu unserer Datenschutzrichtlinie hast, wende dich bitte an support@izisettle.se.",
+              "Wenn du Fragen oder Vorschläge zu unserer Datenschutzrichtlinie hast, wende dich bitte an support@izisettle.com.",
           },
         ],
       },

@@ -22,7 +22,7 @@ class ContactForm extends HTMLElement {
           title: "Ställ en fråga",
           subtitle:
             "Har du en fråga om våra tjänster? Fyll i formuläret nedan så återkommer vi så snart som möjligt.",
-          question: "Fråga till iziSettle",
+          question: "Fråga oss",
           send: "Skicka",
           formError: "Vänligen fyll i frågan.",
           spamDetected: "Spam upptäckt.",

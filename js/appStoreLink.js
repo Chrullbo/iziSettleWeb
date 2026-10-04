@@ -1,6 +1,14 @@
 class AppStoreLink extends HTMLElement {
   static get observedAttributes() {
-    return ["language"];
+    return ["language", "izicup"];
+  }
+
+  get iziCup() {
+    return this.hasAttribute("izicup");
+  }
+
+  set iziCup(value) {
+    this.toggleAttribute("izicup", Boolean(value));
   }
 
   connectedCallback() {
@@ -42,8 +50,8 @@ class AppStoreLink extends HTMLElement {
 
             <a
                 class="app-store-link"
-                href="https://apps.apple.com/us/app/izisettle/id6758045318"
-                aria-label="Download IziSettle on the App Store"
+              ${this.iziCup ? "" : 'href="https://apps.apple.com/us/app/izisettle/id6758045318"'}
+              aria-label="Download ${this.iziCup ? "IziCup" : "IziSettle"} on the App Store"
             >
                 <img
                 src=${this.imagePath}

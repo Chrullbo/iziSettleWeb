@@ -1,6 +1,14 @@
 class AppGallery extends HTMLElement {
   static get observedAttributes() {
-    return ["language"];
+    return ["language", "izicup"];
+  }
+
+  get iziCup() {
+    return this.hasAttribute("izicup");
+  }
+
+  set iziCup(value) {
+    this.toggleAttribute("izicup", Boolean(value));
   }
 
   connectedCallback() {
@@ -59,19 +67,27 @@ class AppGallery extends HTMLElement {
 
   render() {
     const language = this.getAttribute("language") || "en";
-
     const t = this.translations[language] || this.translations.en;
+    const isIziCup = this.iziCup;
+    const title =
+      isIziCup && language === "sv" ? "Se hur IziCup fungerar" : t.title;
+    const headlines =
+      isIziCup && language === "sv"
+        ? ["Tippa med kompisarna", "Tippa varje match", "Följ ställningen"]
+        : t.headlines;
+    const alt = isIziCup && language === "sv" ? headlines : t.alt;
+    const imageDirectory = isIziCup ? "../images/izicup/" : "images/";
 
     const images = ["appstore_1.png", "appstore_2.png", "appstore_3.png"];
 
     this.innerHTML = `
       <section
         class="gallery"
-        aria-label="${t.title}"
+        aria-label="${title}"
       >
 
         <h2>
-          ${t.title}
+          ${title}
         </h2>
 
         <div class="images">
@@ -82,9 +98,11 @@ class AppGallery extends HTMLElement {
           
             <figure>
 
+              <h3>${headlines[index]}</h3>
+
               <img
-                src="images/${image}"
-                alt="${t.alt[index]}"
+                src="${imageDirectory}${image}"
+                alt="${alt[index]}"
                 loading="${index === 0 ? "eager" : "lazy"}"
                 decoding="async"
               >
@@ -116,6 +134,11 @@ class AppGallery extends HTMLElement {
 
 figure {
   margin: 0;
+}
+
+h3 {
+  text-align: center;
+  color: #fff;
 }
 
 img {

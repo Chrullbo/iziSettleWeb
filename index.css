@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Agdasima");
+@import url("https://fonts.googleapis.com/css?family=Akatab");
 
 :root {
   --base-font:
@@ -78,10 +80,74 @@ body > main {
 faq-comp,
 contact-form,
 app-store-link,
-logo-comp {
+brand-header {
   display: block;
   width: 100%;
   text-align: center;
+}
+
+brand-header {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.brand-header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(4rem, 8vw, 6rem) var(--page-gutter);
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.brand-header__content {
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+}
+
+.brand-header__layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, max-content);
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.brand-header__logo {
+  display: block;
+  width: min(100%, 220px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.brand-header__title {
+  margin: 0;
+  color: #fff;
+  font-family: "Akatab", sans-serif;
+  font-size: clamp(2.5rem, 11vw, 8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  overflow-wrap: anywhere;
+  letter-spacing: -7%;
+}
+
+.brand-header__tagline {
+  margin: -10px 0 0 -1px;
+  color: #fff;
+  font-family: "Agdasima", sans-serif;
+  font-size: clamp(0.75rem, 2.5vw, 2rem);
+  line-height: 1.1;
+}
+
+@media (max-width: 640px) {
+  .brand-header__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    width: 100%;
+  }
 }
 
 .quote-card {

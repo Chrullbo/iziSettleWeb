@@ -78,7 +78,12 @@ class AppGallery extends HTMLElement {
     const alt = isIziCup && language === "sv" ? headlines : t.alt;
     const imageDirectory = isIziCup ? "../images/izicup/" : "images/";
 
-    const images = ["appstore_1.png", "appstore_2.png", "appstore_3.png"];
+    const images = [
+      "appstore_1.png",
+      "appstore_2.png",
+      "appstore_3.png",
+      "appstore_4.png",
+    ];
 
     this.innerHTML = `
       <section
@@ -86,9 +91,7 @@ class AppGallery extends HTMLElement {
         aria-label="${title}"
       >
 
-        <h2>
-          ${title}
-        </h2>
+
 
         <div class="images">
 
@@ -98,7 +101,7 @@ class AppGallery extends HTMLElement {
           
             <figure>
 
-              <h3>${headlines[index]}</h3>
+           
 
               <img
                 src="${imageDirectory}${image}"
@@ -120,13 +123,15 @@ class AppGallery extends HTMLElement {
 
       <style>
 .gallery {
-  width: 100%;
+  width: 100vw;
+  background-color: #111;
+  padding: 1rem;
 }
 
 .images {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
 
   width: min(1200px, 95vw);
   margin-inline: auto;

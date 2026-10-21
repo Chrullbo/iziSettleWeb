@@ -12,17 +12,16 @@
     />
     <script type="module" src="../../js/logoIziCup.js"></script>
     <script type="module" src="../../js/appStoreLink.js"></script>
+    <script type="module" src="../../js/brandHeader.js"></script>
   </head>
   <body>
     <main>
-      <!-- Placeholder-logga och App Store-länk medan iziCup saknar en egen App Store-URL. -->
-      <logo-comp image-path="../../images/izicup/logo.png"></logo-comp>
+      <brand-header izicup></brand-header>
       <app-store-link
         image-path="../../images/appstore.svg"
         language="en"
         izicup
       ></app-store-link>
-      <h2 class="izi-gradient-pro">Open in IziCup</h2>
       <p>If you have the app, it will open the tournament automatically.</p>
     </main>
   </body>

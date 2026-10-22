@@ -17,39 +17,25 @@ class BrandHeader extends HTMLElement {
     const isIziCup = this.hasAttribute("izicup");
     const brand = isIziCup
       ? {
-          name: "iziCup",
-          pitch: "-predict matches easy-",
-          logo: "../images/izicup/logo.png",
+          image: "../images/izicup_header.svg",
+          alt: "iziCup - predict matches easy",
         }
       : {
-          name: "iziSettle",
-          pitch: "-settle your expenses easy-",
-          logo: "../images/logo.png",
+          image: "../images/izisettle_header.svg",
+          alt: "iziSettle - settle your expenses easy",
         };
     const section = document.createElement("section");
     section.className = "brand-header";
 
-    const logo = document.createElement("img");
-    logo.className = "brand-header__logo";
-    logo.src = new URL(brand.logo, import.meta.url).href;
-    logo.alt = "";
-    logo.setAttribute("aria-hidden", "true");
-
     const title = document.createElement("h1");
     title.className = "brand-header__title";
-    title.textContent = brand.name;
 
-    const pitch = document.createElement("p");
-    pitch.className = "brand-header__tagline";
-    pitch.textContent = brand.pitch;
-
-    const content = document.createElement("div");
-    content.className = "brand-header__content";
-    content.append(title, pitch);
-    const layout = document.createElement("div");
-    layout.className = "brand-header__layout";
-    layout.append(logo, content);
-    section.append(layout);
+    const image = document.createElement("img");
+    image.className = "brand-header__image";
+    image.src = new URL(brand.image, import.meta.url).href;
+    image.alt = brand.alt;
+    title.append(image);
+    section.append(title);
     this.replaceChildren(section);
   }
 }

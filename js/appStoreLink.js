@@ -50,7 +50,7 @@ class AppStoreLink extends HTMLElement {
 
             <a
                 class="app-store-link"
-              ${this.iziCup ? "https://apps.apple.com/us/app/izicup/id6819009012" : 'href="https://apps.apple.com/us/app/izisettle/id6758045318"'}
+              ${this.iziCup ? 'href="https://apps.apple.com/us/app/izicup/id6819009012"' : 'href="https://apps.apple.com/us/app/izisettle/id6758045318"'}
               aria-label="Download ${this.iziCup ? "IziCup" : "IziSettle"} on the App Store"
             >
                 <img

@@ -78,7 +78,7 @@ class Faq extends HTMLElement {
           {
             question: "Hur tar jag bort mitt konto?",
             answer:
-              'Ta bort ditt konto genom att gå till appens inställningar och välja "Radera konto." Observera att denna åtgärd är oåterkallelig och kommer permanent att radera all din iCloud-data som är kopplad till appen iziSettle.',
+              'Ta bort ditt konto genom att gå till appens inställningar och välja "Radera konto." Observera att denna åtgärd är oåterkallelig och kommer permanent att radera all din iCloud-data som är kopplad till appen.',
           },
         ],
       },

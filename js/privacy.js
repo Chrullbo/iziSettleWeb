@@ -147,12 +147,12 @@ const POLICIES = {
         {
           title: "Information vi samlar in",
           content:
-            'Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din profil, dina tävlingar och dina tips finns på din enhet och i iCloud. Det enda vår server tar emot är en anonym räknare: när en tävling skapas skickar Appen bara vilka turneringar den gäller (t.ex. "se.shl-2026") — inget namn, konto, enhet eller IP-adress — och servern sparar bara summan per turnering och dag. Räknaren är inte kopplad till dig och används inte för spårning.',
+            'Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din profil, dina tävlingar och dina tips finns på din enhet och i iCloud. Det enda vår server tar emot, från och med version 1.0.3 av Appen, är en anonym räknare: när en tävling skapas skickar Appen bara vilka turneringar den gäller (t.ex. "se.shl-2026") — inget namn, konto, enhet eller IP-adress — och servern sparar bara summan per turnering och dag. Räknaren är inte kopplad till dig och används inte för spårning.',
         },
         {
           title: "Hur vi använder iCloud (CloudKit)",
           content:
-            "Appen lagrar din profil (ditt namn) och dina tävlingar i ditt privata iCloud-konto. När du bjuder in någon till en tävling delas den via iCloud: deltagarna ser varandras namn, tips och poäng. Profilen är gemensam med IziSettle om du använder båda apparna; ett telefonnummer i profilen används bara av IziSettle. Du kan när som helst ta bort ditt konto i Appen eller stänga av iCloud för Appen i enhetens inställningar. All data i iCloud hanteras enligt Apples integritetspolicy, och vi har ingen åtkomst till din privata iCloud-data.",
+            "Appen lagrar din profil (ditt namn) och dina tävlingar i ditt privata iCloud-konto. När du bjuder in någon till en tävling delas den via iCloud: deltagarna ser varandras namn, tips och poäng. Profilen är gemensam med IziSettle om du använder båda apparna. Du kan när som helst ta bort ditt konto i Appen eller stänga av iCloud för Appen i enhetens inställningar. All data i iCloud hanteras enligt Apples integritetspolicy, och vi har ingen åtkomst till din privata iCloud-data.",
         },
         {
           title: "Matchdata och tredjepartstjänster",
@@ -190,12 +190,12 @@ const POLICIES = {
         {
           title: "Information We Collect",
           content:
-            'We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your profile, competitions and tips stay on your device and in iCloud. The only thing our server receives is an anonymous counter: when a competition is created, the App sends only which tournaments it covers (for example "se.shl-2026") — no name, account, device or IP address — and the server stores only the total per tournament and day. The counter is not linked to you and is not used for tracking.',
+            'We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your profile, competitions and tips stay on your device and in iCloud. The only thing our server receives, starting with version 1.0.3 of the App, is an anonymous counter: when a competition is created, the App sends only which tournaments it covers (for example "se.shl-2026") — no name, account, device or IP address — and the server stores only the total per tournament and day. The counter is not linked to you and is not used for tracking.',
         },
         {
           title: "How We Use iCloud (CloudKit)",
           content:
-            "The App stores your profile (your name) and your competitions in your private iCloud account. When you invite someone to a competition, it is shared through iCloud: participants see each other's names, tips and points. The profile is shared with IziSettle if you use both apps; a phone number in the profile is used only by IziSettle. You can delete your account in the App or turn off iCloud for the App in your device settings at any time. All data in iCloud is handled in accordance with Apple's Privacy Policy, and we have no access to your private iCloud data.",
+            "The App stores your profile (your name) and your competitions in your private iCloud account. When you invite someone to a competition, it is shared through iCloud: participants see each other's names, tips and points. The profile is shared with IziSettle if you use both apps. You can delete your account in the App or turn off iCloud for the App in your device settings at any time. All data in iCloud is handled in accordance with Apple's Privacy Policy, and we have no access to your private iCloud data.",
         },
         {
           title: "Match Data and Third-Party Services",

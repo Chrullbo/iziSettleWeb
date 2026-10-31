@@ -1,6 +1,235 @@
+// Integritetspolicyn för IziSettle och IziCup — en policy per app, eftersom
+// apparna hanterar data olika (IziCup har t.ex. en anonym räknare,
+// IziSettle hämtar växelkurser). Sidan väljer app och språk:
+// <privacy-policy app="izicup" language="sv">. Utan `app` visas IziSettle.
+// Avsnitten numreras när de ritas.
+
+const POLICIES = {
+  izisettle: {
+    en: {
+      heading: "Privacy Policy",
+      effectiveDate: "Effective Date: June 22, 2026",
+      introduction:
+        'IziSettle is committed to protecting your privacy. This Privacy Policy explains how user information is handled in connection with IziSettle ("the App").',
+      items: [
+        {
+          title: "Information We Collect",
+          content:
+            "We do not collect, store, or transmit any of your personal information, usage data, or sensitive content on our own servers. Your data remains on your device and in your iCloud account.",
+        },
+        {
+          title: "How We Use iCloud (CloudKit)",
+          content:
+            "If you choose to enable iCloud synchronization, the App uses your personal, private iCloud account to store your app data. This data is stored directly in your private iCloud container. You have total control over this data and can disable iCloud access for the App at any time through your device's iCloud settings. All data stored in iCloud is handled in accordance with Apple's Privacy Policy. We do not have access to, nor do we view or process, the data stored in your private iCloud.",
+        },
+        {
+          title: "Third-Party Services",
+          content:
+            'We do not use third-party analytics, advertising networks, or tracking services. We do not share your personal information with any third parties. When you enter an expense in a foreign currency, the App fetches the exchange rate from open.er-api.com. Only the currency code (e.g., "EUR") is sent — no personal data. The App operates independently and respects your privacy completely.',
+        },
+        {
+          title: "Children's Privacy",
+          content:
+            "The App does not knowingly collect personally identifiable information from anyone under the age of 13. If we become aware that we have collected personal information from a child under 13, we will take appropriate steps to delete such information.",
+        },
+        {
+          title: "Data Security",
+          content:
+            "We are committed to ensuring the security of your information. Since we do not store your data on our servers, the security of your data depends on Apple's iCloud security measures and your device's security settings.",
+        },
+        {
+          title: "Changes to This Privacy Policy",
+          content:
+            'We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top.',
+        },
+        {
+          title: "Contact Us",
+          content:
+            "If you have any questions or suggestions about our Privacy Policy, please contact us at support@izisettle.se.",
+        },
+      ],
+    },
+    sv: {
+      heading: "Integritetspolicy",
+      effectiveDate: "Giltig från: 22 juni 2026",
+      introduction:
+        'IziSettle är engagerat i att skydda din integritet. Denna integritetspolicy förklarar hur användarinformation hanteras i samband med IziSettle ("Appen").',
+      items: [
+        {
+          title: "Information vi samlar in",
+          content:
+            "Vi samlar inte in, lagrar eller överför någon personlig information, användningsdata eller känsligt innehåll på våra servrar. Din data förblir på din enhet och i ditt iCloud-konto.",
+        },
+        {
+          title: "Hur vi använder iCloud (CloudKit)",
+          content:
+            "Om du väljer att aktivera iCloud-synkronisering använder Appen ditt personliga, privata iCloud-konto för att lagra din appdata. Denna data lagras direkt i din privata iCloud-behållare. Du har fullständig kontroll över denna data och kan inaktivera iCloud-åtkomst för Appen när som helst genom enhetens iCloud-inställningar. All data som lagras i iCloud hanteras i enlighet med Apples integritetspolicy. Vi har ingen åtkomst till och vi kan inte se eller bearbeta den data som lagras i ditt privata iCloud.",
+        },
+        {
+          title: "Tredjepartstjänster",
+          content:
+            'Vi använder inte analysverktyg från tredje part, reklamföretag eller spårning. Vi delar inte din personliga information med någon tredje part. När du registrerar en utgift i utländsk valuta hämtar Appen växelkursen från open.er-api.com. Endast valutakoden (t.ex. "EUR") skickas — ingen personlig data. Appen fungerar oberoende och respekterar din integritet fullständigt.',
+        },
+        {
+          title: "Integritet för barn",
+          content:
+            "Appen samlar inte medvetet in personligt identifierbar information från personer under 13 år. Om vi blir medvetna om att vi har samlat in personlig information från ett barn under 13 år, kommer vi att vidta lämpliga åtgärder för att ta bort sådan information.",
+        },
+        {
+          title: "Datasäkerhet",
+          content:
+            "Vi är engagerade i att säkerställa säkerheten för din information. Eftersom vi inte lagrar din data på våra servrar beror säkerheten för din data på Apples iCloud-säkerhetsåtgärder och din enhets säkerhetsinställningar.",
+        },
+        {
+          title: "Ändringar av denna integritetspolicy",
+          content:
+            'Vi kan uppdatera vår integritetspolicy från tid till annan. Vi meddelar dig om ändringar genom att publicera den nya integritetspolicyn på denna sida och uppdatera "Giltig från"-datumet högst upp.',
+        },
+        {
+          title: "Kontakta oss",
+          content:
+            "Om du har några frågor eller förslag om vår integritetspolicy, vänligen kontakta oss på support@izisettle.com.",
+        },
+      ],
+    },
+    de: {
+      heading: "Datenschutzrichtlinie",
+      effectiveDate: "Gültig ab: 22. Juni 2026",
+      introduction:
+        'IziSettle setzt sich für den Schutz deiner Privatsphäre ein. Diese Datenschutzrichtlinie erklärt, wie Nutzerinformationen im Zusammenhang mit IziSettle ("die App") behandelt werden.',
+      items: [
+        {
+          title: "Informationen, die wir erfassen",
+          content:
+            "Wir erfassen, speichern oder übertragen keine deiner personenbezogenen Daten, Nutzungsdaten oder sensiblen Inhalte auf unseren eigenen Servern. Deine Daten verbleiben auf deinem Gerät und in deinem iCloud-Konto.",
+        },
+        {
+          title: "Wie wir iCloud (CloudKit) nutzen",
+          content:
+            "Wenn du dich für die iCloud-Synchronisierung entscheidest, nutzt die App dein persönliches, privates iCloud-Konto, um deine App-Daten zu speichern. Diese Daten werden direkt in deinem privaten iCloud-Container gespeichert. Du hast die volle Kontrolle über diese Daten und kannst den iCloud-Zugriff für die App jederzeit über die iCloud-Einstellungen deines Geräts deaktivieren. Alle in iCloud gespeicherten Daten werden gemäß der Datenschutzrichtlinie von Apple behandelt. Wir haben keinen Zugriff auf die in deinem privaten iCloud gespeicherten Daten und sehen oder verarbeiten diese nicht.",
+        },
+        {
+          title: "Drittanbieter-Dienste",
+          content:
+            'Wir verwenden keine Analyse-Tools, Werbenetzwerke oder Tracking-Dienste von Drittanbietern. Wir geben deine personenbezogenen Daten nicht an Dritte weiter. Wenn du eine Ausgabe in einer Fremdwährung erfasst, ruft die App den Wechselkurs von open.er-api.com ab. Es wird nur der Währungscode (z. B. "EUR") übertragen — keine personenbezogenen Daten. Die App arbeitet unabhängig und respektiert deine Privatsphäre vollständig.',
+        },
+        {
+          title: "Datenschutz für Kinder",
+          content:
+            "Die App erfasst wissentlich keine personenbezogenen Daten von Personen unter 13 Jahren. Sollten wir erfahren, dass wir personenbezogene Daten eines Kindes unter 13 Jahren erfasst haben, ergreifen wir geeignete Maßnahmen, um diese Daten zu löschen.",
+        },
+        {
+          title: "Datensicherheit",
+          content:
+            "Wir setzen uns für die Sicherheit deiner Informationen ein. Da wir deine Daten nicht auf unseren Servern speichern, hängt die Sicherheit deiner Daten von den iCloud-Sicherheitsmaßnahmen von Apple und den Sicherheitseinstellungen deines Geräts ab.",
+        },
+        {
+          title: "Änderungen dieser Datenschutzrichtlinie",
+          content:
+            'Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir informieren dich über Änderungen, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum "Gültig ab" oben aktualisieren.',
+        },
+        {
+          title: "Kontaktiere uns",
+          content:
+            "Wenn du Fragen oder Vorschläge zu unserer Datenschutzrichtlinie hast, wende dich bitte an support@izisettle.com.",
+        },
+      ],
+    },
+  },
+
+  izicup: {
+    sv: {
+      heading: "Integritetspolicy",
+      effectiveDate: "Giltig från: 31 oktober 2026",
+      introduction:
+        'IziCup är engagerat i att skydda din integritet. Denna integritetspolicy förklarar hur användarinformation hanteras i samband med IziCup ("Appen").',
+      items: [
+        {
+          title: "Information vi samlar in",
+          content:
+            'Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din profil, dina tävlingar och dina tips finns på din enhet och i iCloud. Det enda vår server tar emot är en anonym räknare: när en tävling skapas skickar Appen bara vilka turneringar den gäller (t.ex. "se.shl-2026") — inget namn, konto, enhet eller IP-adress — och servern sparar bara summan per turnering och dag. Räknaren är inte kopplad till dig och används inte för spårning.',
+        },
+        {
+          title: "Hur vi använder iCloud (CloudKit)",
+          content:
+            "Appen lagrar din profil (ditt namn) och dina tävlingar i ditt privata iCloud-konto. När du bjuder in någon till en tävling delas den via iCloud: deltagarna ser varandras namn, tips och poäng. Profilen är gemensam med IziSettle om du använder båda apparna; ett telefonnummer i profilen används bara av IziSettle. Du kan när som helst ta bort ditt konto i Appen eller stänga av iCloud för Appen i enhetens inställningar. All data i iCloud hanteras enligt Apples integritetspolicy, och vi har ingen åtkomst till din privata iCloud-data.",
+        },
+        {
+          title: "Matchdata och tredjepartstjänster",
+          content:
+            "Matcher, resultat och lagloggor hämtas av vår server från dataleverantören Highlightly och läggs i en publik iCloud-databas som Appen läser. Appen skickar ingen information om dig för att hämta dem. Notiser om resultat och nya matcher går via iCloud, och påminnelser före avspark skapas på din enhet. Vi använder inte analysverktyg från tredje part, reklam eller spårning, och vi delar inte din information med någon tredje part.",
+        },
+        {
+          title: "Integritet för barn",
+          content:
+            "Appen samlar inte medvetet in personligt identifierbar information från personer under 13 år. Om vi blir medvetna om att vi har samlat in personlig information från ett barn under 13 år, kommer vi att vidta lämpliga åtgärder för att ta bort sådan information.",
+        },
+        {
+          title: "Datasäkerhet",
+          content:
+            "Din profil, dina tävlingar och tips lagras i iCloud, så deras säkerhet beror på Apples iCloud-säkerhetsåtgärder och din enhets säkerhetsinställningar. Räknaren på vår server innehåller bara summor, inget om enskilda personer.",
+        },
+        {
+          title: "Ändringar av denna integritetspolicy",
+          content:
+            'Vi kan uppdatera vår integritetspolicy från tid till annan. Vi meddelar dig om ändringar genom att publicera den nya integritetspolicyn på denna sida och uppdatera "Giltig från"-datumet högst upp.',
+        },
+        {
+          title: "Kontakta oss",
+          content:
+            "Om du har några frågor eller förslag om vår integritetspolicy, vänligen kontakta oss på support@izisettle.com.",
+        },
+      ],
+    },
+    en: {
+      heading: "Privacy Policy",
+      effectiveDate: "Effective Date: October 31, 2026",
+      introduction:
+        'IziCup is committed to protecting your privacy. This Privacy Policy explains how user information is handled in connection with IziCup ("the App").',
+      items: [
+        {
+          title: "Information We Collect",
+          content:
+            'We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your profile, competitions and tips stay on your device and in iCloud. The only thing our server receives is an anonymous counter: when a competition is created, the App sends only which tournaments it covers (for example "se.shl-2026") — no name, account, device or IP address — and the server stores only the total per tournament and day. The counter is not linked to you and is not used for tracking.',
+        },
+        {
+          title: "How We Use iCloud (CloudKit)",
+          content:
+            "The App stores your profile (your name) and your competitions in your private iCloud account. When you invite someone to a competition, it is shared through iCloud: participants see each other's names, tips and points. The profile is shared with IziSettle if you use both apps; a phone number in the profile is used only by IziSettle. You can delete your account in the App or turn off iCloud for the App in your device settings at any time. All data in iCloud is handled in accordance with Apple's Privacy Policy, and we have no access to your private iCloud data.",
+        },
+        {
+          title: "Match Data and Third-Party Services",
+          content:
+            "Matches, results and team logos are fetched by our server from the data provider Highlightly and placed in a public iCloud database that the App reads. The App sends no information about you to get them. Notifications about results and new matches are delivered through iCloud, and reminders before kick-off are created on your device. We do not use third-party analytics, advertising or tracking, and we do not share your information with any third parties.",
+        },
+        {
+          title: "Children's Privacy",
+          content:
+            "The App does not knowingly collect personally identifiable information from anyone under the age of 13. If we become aware that we have collected personal information from a child under 13, we will take appropriate steps to delete such information.",
+        },
+        {
+          title: "Data Security",
+          content:
+            "Your profile, competitions and tips are stored in iCloud, so their security depends on Apple's iCloud security measures and your device's security settings. The counter on our server holds only totals, nothing about individuals.",
+        },
+        {
+          title: "Changes to This Privacy Policy",
+          content:
+            'We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top.',
+        },
+        {
+          title: "Contact Us",
+          content:
+            "If you have any questions or suggestions about our Privacy Policy, please contact us at support@izisettle.com.",
+        },
+      ],
+    },
+  },
+};
+
 class PrivacyPolicy extends HTMLElement {
   static get observedAttributes() {
-    return ["language"];
+    return ["language", "app"];
   }
 
   connectedCallback() {
@@ -14,140 +243,9 @@ class PrivacyPolicy extends HTMLElement {
   }
 
   getTranslations() {
-    const translations = {
-      en: {
-        heading: "Privacy Policy",
-        effectiveDate: "Effective Date: October 31, 2026",
-        introduction:
-          'IziSettle is committed to protecting your privacy. This Privacy Policy explains how user information is handled in connection with IziSettle ("the App").',
-        items: [
-          {
-            title: "1. Information We Collect",
-            content:
-              "We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your data remains on your device and in your iCloud account. The one exception is an anonymous counter in IziCup: when a competition is created, the app sends only which tournaments it covers (for example \"se.shl-2026\") — no name, account, device or IP address — and our server stores only the total per tournament and day. It is not linked to you and is not used for tracking.",
-          },
-          {
-            title: "2. How We Use iCloud (CloudKit)",
-            content:
-              "If you choose to enable iCloud synchronization, the App uses your personal, private iCloud account to store your app data. This data is stored directly in your private iCloud container. You have total control over this data and can disable iCloud access for the App at any time through your device's iCloud settings. All data stored in iCloud is handled in accordance with Apple's Privacy Policy. We do not have access to, nor do we view or process, the data stored in your private iCloud.",
-          },
-          {
-            title: "3. Third-Party Services",
-            content:
-              'We do not use third-party analytics, advertising networks, or tracking services. We do not share your personal information with any third parties. When you enter an expense in a foreign currency, the App fetches the exchange rate from open.er-api.com. Only the currency code (e.g., "EUR") is sent — no personal data. The App operates independently and respects your privacy completely.',
-          },
-          {
-            title: "4. Children's Privacy",
-            content:
-              "The App does not knowingly collect personally identifiable information from anyone under the age of 13. If we become aware that we have collected personal information from a child under 13, we will take appropriate steps to delete such information.",
-          },
-          {
-            title: "5. Data Security",
-            content:
-              "We are committed to ensuring the security of your information. Since we do not store your data on our servers, the security of your data depends on Apple's iCloud security measures and your device's security settings.",
-          },
-          {
-            title: "6. Changes to This Privacy Policy",
-            content:
-              'We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top.',
-          },
-          {
-            title: "7. Contact Us",
-            content:
-              "If you have any questions or suggestions about our Privacy Policy, please contact us at support@izisettle.se.",
-          },
-        ],
-      },
-      sv: {
-        heading: "Integritetspolicy",
-        effectiveDate: "Giltig från: 31 oktober 2026",
-        introduction:
-          'IziSettle/IziCup är engagerat i att skydda din integritet. Denna integritetspolicy förklarar hur användarinformation hanteras i samband med IziSettle/IziCup ("Appen").',
-        items: [
-          {
-            title: "1. Information vi samlar in",
-            content:
-              "Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din data förblir på din enhet och i ditt iCloud-konto. Det enda undantaget är en anonym räknare i IziCup: när en tävling skapas skickar appen bara vilka turneringar den gäller (t.ex. \"se.shl-2026\") — inget namn, konto, enhet eller IP-adress — och vår server sparar bara summan per turnering och dag. Den är inte kopplad till dig och används inte för spårning.",
-          },
-          {
-            title: "2. Hur vi använder iCloud (CloudKit)",
-            content:
-              "Om du väljer att aktivera iCloud-synkronisering använder Appen ditt personliga, privata iCloud-konto för att lagra din appdata. Denna data lagras direkt i din privata iCloud-behållare. Du har fullständig kontroll över denna data och kan inaktivera iCloud-åtkomst för Appen när som helst genom enhetens iCloud-inställningar. All data som lagras i iCloud hanteras i enlighet med Apples integritetspolicy. Vi har ingen åtkomst till och vi kan inte se eller bearbeta den data som lagras i ditt privata iCloud.",
-          },
-          {
-            title: "3. Tredjepartstjänster",
-            content:
-              'Vi använder inte analysverktyg från tredje part, reklamföretag eller spårning. Vi delar inte din personliga information med någon tredje part. När du registrerar en utgift i utländsk valuta hämtar Appen växelkursen från open.er-api.com. Endast valutakoden (t.ex. "EUR") skickas — ingen personlig data. Appen fungerar oberoende och respekterar din integritet fullständigt.',
-          },
-          {
-            title: "4. Integritet för barn",
-            content:
-              "Appen samlar inte medvetet in personligt identifierbar information från personer under 13 år. Om vi blir medvetna om att vi har samlat in personlig information från ett barn under 13 år, kommer vi att vidta lämpliga åtgärder för att ta bort sådan information.",
-          },
-          {
-            title: "5. Datasäkerhet",
-            content:
-              "Vi är engagerade i att säkerställa säkerheten för din information. Eftersom vi inte lagrar din data på våra servrar beror säkerheten för din data på Apples iCloud-säkerhetsåtgärder och din enhets säkerhetsinställningar.",
-          },
-          {
-            title: "6. Ändringar av denna integritetspolicy",
-            content:
-              'Vi kan uppdatera vår integritetspolicy från tid till annan. Vi meddelar dig om ändringar genom att publicera den nya integritetspolicyn på denna sida och uppdatera "Giltig från"-datumet högst upp.',
-          },
-          {
-            title: "7. Kontakta oss",
-            content:
-              "Om du har några frågor eller förslag om vår integritetspolicy, vänligen kontakta oss på support@izisettle.com.",
-          },
-        ],
-      },
-      de: {
-        heading: "Datenschutzrichtlinie",
-        effectiveDate: "Gültig ab: 31. Oktober 2026",
-        introduction:
-          'IziSettle setzt sich für den Schutz deiner Privatsphäre ein. Diese Datenschutzrichtlinie erklärt, wie Nutzerinformationen im Zusammenhang mit IziSettle ("die App") behandelt werden.',
-        items: [
-          {
-            title: "1. Informationen, die wir erfassen",
-            content:
-              "Wir erfassen, speichern oder übertragen keine deiner personenbezogenen Daten oder sensiblen Inhalte auf unseren eigenen Servern. Deine Daten verbleiben auf deinem Gerät und in deinem iCloud-Konto. Die einzige Ausnahme ist ein anonymer Zähler in IziCup: Wenn ein Wettbewerb erstellt wird, sendet die App nur, welche Turniere er umfasst (z. B. \"se.shl-2026\") — keinen Namen, kein Konto, kein Gerät und keine IP-Adresse — und unser Server speichert nur die Summe pro Turnier und Tag. Er ist nicht mit dir verknüpft und wird nicht zum Tracking verwendet.",
-          },
-          {
-            title: "2. Wie wir iCloud (CloudKit) nutzen",
-            content:
-              "Wenn du dich für die iCloud-Synchronisierung entscheidest, nutzt die App dein persönliches, privates iCloud-Konto, um deine App-Daten zu speichern. Diese Daten werden direkt in deinem privaten iCloud-Container gespeichert. Du hast die volle Kontrolle über diese Daten und kannst den iCloud-Zugriff für die App jederzeit über die iCloud-Einstellungen deines Geräts deaktivieren. Alle in iCloud gespeicherten Daten werden gemäß der Datenschutzrichtlinie von Apple behandelt. Wir haben keinen Zugriff auf die in deinem privaten iCloud gespeicherten Daten und sehen oder verarbeiten diese nicht.",
-          },
-          {
-            title: "3. Drittanbieter-Dienste",
-            content:
-              'Wir verwenden keine Analyse-Tools, Werbenetzwerke oder Tracking-Dienste von Drittanbietern. Wir geben deine personenbezogenen Daten nicht an Dritte weiter. Wenn du eine Ausgabe in einer Fremdwährung erfasst, ruft die App den Wechselkurs von open.er-api.com ab. Es wird nur der Währungscode (z. B. "EUR") übertragen — keine personenbezogenen Daten. Die App arbeitet unabhängig und respektiert deine Privatsphäre vollständig.',
-          },
-          {
-            title: "4. Datenschutz für Kinder",
-            content:
-              "Die App erfasst wissentlich keine personenbezogenen Daten von Personen unter 13 Jahren. Sollten wir erfahren, dass wir personenbezogene Daten eines Kindes unter 13 Jahren erfasst haben, ergreifen wir geeignete Maßnahmen, um diese Daten zu löschen.",
-          },
-          {
-            title: "5. Datensicherheit",
-            content:
-              "Wir setzen uns für die Sicherheit deiner Informationen ein. Da wir deine Daten nicht auf unseren Servern speichern, hängt die Sicherheit deiner Daten von den iCloud-Sicherheitsmaßnahmen von Apple und den Sicherheitseinstellungen deines Geräts ab.",
-          },
-          {
-            title: "6. Änderungen dieser Datenschutzrichtlinie",
-            content:
-              'Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir informieren dich über Änderungen, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum "Gültig ab" oben aktualisieren.',
-          },
-          {
-            title: "7. Kontaktiere uns",
-            content:
-              "Wenn du Fragen oder Vorschläge zu unserer Datenschutzrichtlinie hast, wende dich bitte an support@izisettle.com.",
-          },
-        ],
-      },
-    };
-
+    const app = POLICIES[this.getAttribute("app")] || POLICIES.izisettle;
     const language = this.getAttribute("language") || "en";
-    return translations[language] || translations.en;
+    return app[language] || app.en;
   }
 
   render() {
@@ -156,9 +254,9 @@ class PrivacyPolicy extends HTMLElement {
 
     const policyItems = t.items
       .map(
-        ({ title, content }) => `
+        ({ title, content }, index) => `
         <section class="policy-item">
-          <h2 class="izi-gradient">${title}</h2>
+          <h2 class="izi-gradient">${index + 1}. ${title}</h2>
           <p>${content}</p>
         </section>`,
       )
@@ -170,9 +268,9 @@ class PrivacyPolicy extends HTMLElement {
           <h1 id="privacy-heading" class="izi-gradient">${t.heading}</h1>
           <p class="effective-date">${t.effectiveDate}</p>
         </header>
-        
+
         <p class="introduction">${t.introduction}</p>
-        
+
         ${policyItems}
       </article>
     `;

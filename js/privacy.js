@@ -17,14 +17,14 @@ class PrivacyPolicy extends HTMLElement {
     const translations = {
       en: {
         heading: "Privacy Policy",
-        effectiveDate: "Effective Date: June 22, 2026",
+        effectiveDate: "Effective Date: October 31, 2026",
         introduction:
           'IziSettle is committed to protecting your privacy. This Privacy Policy explains how user information is handled in connection with IziSettle ("the App").',
         items: [
           {
             title: "1. Information We Collect",
             content:
-              "We do not collect, store, or transmit any of your personal information, usage data, or sensitive content on our own servers. Your data remains on your device and in your iCloud account.",
+              "We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your data remains on your device and in your iCloud account. The one exception is an anonymous counter in IziCup: when a competition is created, the app sends only which tournaments it covers (for example \"se.shl-2026\") — no name, account, device or IP address — and our server stores only the total per tournament and day. It is not linked to you and is not used for tracking.",
           },
           {
             title: "2. How We Use iCloud (CloudKit)",
@@ -60,14 +60,14 @@ class PrivacyPolicy extends HTMLElement {
       },
       sv: {
         heading: "Integritetspolicy",
-        effectiveDate: "Giltig från: 22 juni 2026",
+        effectiveDate: "Giltig från: 31 oktober 2026",
         introduction:
           'IziSettle/IziCup är engagerat i att skydda din integritet. Denna integritetspolicy förklarar hur användarinformation hanteras i samband med IziSettle/IziCup ("Appen").',
         items: [
           {
             title: "1. Information vi samlar in",
             content:
-              "Vi samlar inte in, lagrar eller överför någon personlig information, användningsdata eller känsligt innehåll på våra servrar. Din data förblir på din enhet och i ditt iCloud-konto.",
+              "Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din data förblir på din enhet och i ditt iCloud-konto. Det enda undantaget är en anonym räknare i IziCup: när en tävling skapas skickar appen bara vilka turneringar den gäller (t.ex. \"se.shl-2026\") — inget namn, konto, enhet eller IP-adress — och vår server sparar bara summan per turnering och dag. Den är inte kopplad till dig och används inte för spårning.",
           },
           {
             title: "2. Hur vi använder iCloud (CloudKit)",
@@ -103,14 +103,14 @@ class PrivacyPolicy extends HTMLElement {
       },
       de: {
         heading: "Datenschutzrichtlinie",
-        effectiveDate: "Gültig ab: 22. Juni 2026",
+        effectiveDate: "Gültig ab: 31. Oktober 2026",
         introduction:
           'IziSettle setzt sich für den Schutz deiner Privatsphäre ein. Diese Datenschutzrichtlinie erklärt, wie Nutzerinformationen im Zusammenhang mit IziSettle ("die App") behandelt werden.',
         items: [
           {
             title: "1. Informationen, die wir erfassen",
             content:
-              "Wir erfassen, speichern oder übertragen keine deiner personenbezogenen Daten, Nutzungsdaten oder sensiblen Inhalte auf unseren eigenen Servern. Deine Daten verbleiben auf deinem Gerät und in deinem iCloud-Konto.",
+              "Wir erfassen, speichern oder übertragen keine deiner personenbezogenen Daten oder sensiblen Inhalte auf unseren eigenen Servern. Deine Daten verbleiben auf deinem Gerät und in deinem iCloud-Konto. Die einzige Ausnahme ist ein anonymer Zähler in IziCup: Wenn ein Wettbewerb erstellt wird, sendet die App nur, welche Turniere er umfasst (z. B. \"se.shl-2026\") — keinen Namen, kein Konto, kein Gerät und keine IP-Adresse — und unser Server speichert nur die Summe pro Turnier und Tag. Er ist nicht mit dir verknüpft und wird nicht zum Tracking verwendet.",
           },
           {
             title: "2. Wie wir iCloud (CloudKit) nutzen",

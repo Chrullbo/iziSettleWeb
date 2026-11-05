@@ -147,7 +147,7 @@ const POLICIES = {
         {
           title: "Information vi samlar in",
           content:
-            'Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din profil, dina tävlingar och dina tips finns på din enhet och i iCloud. Det enda vår server tar emot, från och med version 1.0.3 av Appen, är en anonym räknare: när en tävling skapas skickar Appen bara vilka turneringar den gäller (t.ex. "se.shl-2026") — inget namn, konto, enhet eller IP-adress — och servern sparar bara summan per turnering och dag. Räknaren är inte kopplad till dig och används inte för spårning.',
+            'Vi samlar inte in, lagrar eller överför någon personlig information eller känsligt innehåll på våra servrar. Din profil, dina tävlingar och dina tips finns på din enhet och i iCloud. Det enda vår server tar emot är anonym statistik: när en tävling skapas skickar Appen bara vilka turneringar den gäller (t.ex. "se.shl-2026"), och första gången du tippar en match skickar Appen bara vilken match det gäller och om du tippade 1, X eller 2 — aldrig resultatet du tippade, och inget namn, konto, enhet eller IP-adress. Servern sparar bara summor: tävlingar per turnering och dag, och antalet 1, X och 2 per match. Statistiken är inte kopplad till dig och används inte för spårning.',
         },
         {
           title: "Hur vi använder iCloud (CloudKit)",
@@ -167,7 +167,7 @@ const POLICIES = {
         {
           title: "Datasäkerhet",
           content:
-            "Din profil, dina tävlingar och tips lagras i iCloud, så deras säkerhet beror på Apples iCloud-säkerhetsåtgärder och din enhets säkerhetsinställningar. Räknaren på vår server innehåller bara summor, inget om enskilda personer.",
+            "Din profil, dina tävlingar och tips lagras i iCloud, så deras säkerhet beror på Apples iCloud-säkerhetsåtgärder och din enhets säkerhetsinställningar. Statistiken på vår server innehåller bara summor, inget om enskilda personer.",
         },
         {
           title: "Ändringar av denna integritetspolicy",
@@ -190,7 +190,7 @@ const POLICIES = {
         {
           title: "Information We Collect",
           content:
-            'We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your profile, competitions and tips stay on your device and in iCloud. The only thing our server receives, starting with version 1.0.3 of the App, is an anonymous counter: when a competition is created, the App sends only which tournaments it covers (for example "se.shl-2026") — no name, account, device or IP address — and the server stores only the total per tournament and day. The counter is not linked to you and is not used for tracking.',
+            'We do not collect, store, or transmit any of your personal information or sensitive content on our own servers. Your profile, competitions and tips stay on your device and in iCloud. The only thing our server receives is anonymous statistics: when a competition is created, the App sends only which tournaments it covers (for example "se.shl-2026"), and the first time you tip a match the App sends only which match it is and whether you tipped 1, X or 2 — never the score you tipped, and no name, account, device or IP address. The server stores only totals: competitions per tournament and day, and the number of 1, X and 2 per match. The statistics are not linked to you and are not used for tracking.',
         },
         {
           title: "How We Use iCloud (CloudKit)",
@@ -210,7 +210,7 @@ const POLICIES = {
         {
           title: "Data Security",
           content:
-            "Your profile, competitions and tips are stored in iCloud, so their security depends on Apple's iCloud security measures and your device's security settings. The counter on our server holds only totals, nothing about individuals.",
+            "Your profile, competitions and tips are stored in iCloud, so their security depends on Apple's iCloud security measures and your device's security settings. The statistics on our server hold only totals, nothing about individuals.",
         },
         {
           title: "Changes to This Privacy Policy",

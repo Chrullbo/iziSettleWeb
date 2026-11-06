@@ -4,18 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IziSettle</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/index.css" />
     <meta property="og:title" content="IziSettle" />
     <meta property="og:image" content="https://izisettle.com/images/logo.png" />
-    <script type="module" src="js/logo.js"></script>
-    <script type="module" src="../js/brandHeader.js"></script>
-    <script type="module" src="js/appStoreLink.js"></script>
+    <script type="module" src="/js/brandHeader.js"></script>
+    <script type="module" src="/js/appStoreLink.js"></script>
   </head>
   <body>
     <main>
       <brand-header></brand-header>
-      <app-store-link language="en"></app-store-link>
-      <p>If you have the app, it will open the settlement automatically.</p>
+      <app-store-link
+        image-path="/images/appstore.svg"
+        language="en"
+      ></app-store-link>
+      <p id="open-hint">
+        If you have the app, it will open the settlement automatically.
+      </p>
     </main>
+    <script>
+      // Fallback för länkar utan egen sida, t.ex. /izicup/s/<id>: samma sida
+      // tjänar båda apparna, så varumärket väljs ur adressen.
+      if (location.pathname.startsWith("/izicup")) {
+        document.title = "IziCup";
+        document.querySelector("brand-header").setAttribute("izicup", "");
+        document.querySelector("app-store-link").setAttribute("izicup", "");
+        document.getElementById("open-hint").textContent =
+          "If you have the app, it will open the tournament automatically.";
+      }
+    </script>
   </body>
 </html>
